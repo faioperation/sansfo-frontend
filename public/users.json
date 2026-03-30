@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Clinic Assistant",
+    "status": "AI Assistant Online",
+    "avatar": "https://i.pravatar.cc/100?img=1"
+  },
+  {
+    "id": 2,
+    "name": "Ahik",
+    "status": "AI Assistant Online",
+    "avatar": "https://i.pravatar.cc/100?img=2"
+  }
+]

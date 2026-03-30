@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "sender": "bot",
+    "text": "Hey there 👋",
+    "time": "09:00 AM"
+  },
+  {
+    "id": 2,
+    "sender": "me",
+    "text": "Hi! Can you help me?",
+    "time": "09:02 AM"
+  },
+  {
+    "id": 3,
+    "sender": "bot",
+    "text": "Of course! What do you need?",
+    "time": "09:03 AM"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "sender": "me",
+    "text": "I'd like to book an appointment.",
+    "time": "10:42 AM"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "sender": "bot",
+    "text": "Sure! I can help with that. What kind of appointment are you looking for?",
+    "time": "10:43 AM"
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "sender": "bot",
+    "text": "Hello 👋 How can I help?",
+    "time": "09:00 AM"
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "sender": "me",
+    "text": "I need help with booking",
+    "time": "09:02 AM"
+  }
+]
