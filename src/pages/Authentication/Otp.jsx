@@ -181,24 +181,24 @@ const Otp = () => {
 
   return (
 
-    <div className="min-h-screen flex items-center justify-center bg-[#1D1D1D] text-white">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
 
-      <div className="w-[650px] border border-[#636363] rounded-2xl p-10 bg-white/[0.03]">
+      <div className="w-[650px] h-[500px] bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
 
         {/* Logo */}
 
         <div className="flex flex-col items-center mb-8">
 
-          <div className="flex items-center gap-2 mb-3">
-            <img src={logo} alt="logo" className="w-12 h-12"/>
-            <h1 className="text-3xl font-semibold">LoGo</h1>
+          <div className="flex flex-col items-center gap-2 mb-3">
+            <img src={logo} alt="logo" className="w-12 h-12" />
+            <h1 className="text-3xl font-semibold text-primary">LoGo</h1>
           </div>
 
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-lg font-semibold text-primary">
             OTP Verification
           </h2>
 
-          <p className="text-sm text-[#A4A4A4] mt-2 text-center">
+          <p className="text-sm text-gray-500 mt-1 text-center">
             We sent a code to your email address. Please check <br />
             your email for the 6 digit code.
           </p>
@@ -209,7 +209,7 @@ const Otp = () => {
 
         <div
           className="flex justify-center gap-4"
-          // onPaste={handlePaste}
+        // onPaste={handlePaste}
         >
 
           {[...Array(6)].map((_, index) => {
@@ -230,7 +230,7 @@ const Otp = () => {
                 // }}
                 // onChange={(e) => handleChange(e, index)}
                 // onKeyDown={(e) => handleKeyDown(e, index)}
-                className="w-12 h-12 text-center border border-[#00CE51] rounded-lg bg-transparent text-lg font-semibold"
+                className="w-12 h-12 text-center border border-base-200 rounded-lg bg-transparent text-lg font-semibold"
               />
             );
 

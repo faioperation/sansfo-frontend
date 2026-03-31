@@ -10,107 +10,89 @@ import { useNavigate } from "react-router";
 import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
-
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   // const axiosSecure = useAxiosSecure();
   // const { login } = useAuth();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = async (data) => {
     console.log(data);
-    
+
     // setLoading(true);
     // try {
-
     //   const res = await axios.post(
     //     "https://test11.fireai.agency/auth/login/",
     //     data
     //   );
 
     //   Cookies.set("accessToken", res.data.tokens.access);
-
     //   login(res.data);
-
     //   navigate("/");
     //   toast.success("Login Successful!");
 
     // } catch (error) {
-
     //   console.log(error.response?.data);
     //   toast.error("Something went wrong!");
-
     // }
     // setLoading(false);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#1D1D1D] text-white">
-
-      <div className="w-[650px] border border-[#636363] rounded-2xl p-10">
-
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
+      <div className="w-[650px] bg-white border border-gray-200 shadow-xl rounded-2xl p-10">
         {/* Logo */}
         <div className="flex flex-col items-center mb-8">
-
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex flex-col items-center gap-2 mb-3">
             <img src={logo} alt="logo" className="w-12 h-12" />
-            <h1 className="text-3xl font-semibold">LoGo</h1>
+            <h1 className="text-3xl font-semibold text-primary">LoGo</h1>
           </div>
 
-          <h2 className="text-lg font-semibold">
-            Login your Profile
+          <h2 className="text-lg font-semibold text-primary">
+            Login to Account
           </h2>
 
-          <p className="text-sm text-[#A4A4A4] mt-1">
+          <p className="text-sm text-[#969696] mt-1">
             Start with new journey
           </p>
-
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
           {/* Email */}
           <div>
-
-            <label className="text-sm text-gray-300">
-              Email
-            </label>
+            <label className="text-sm text-gray-600">Email</label>
 
             <input
               type="email"
               {...register("email", { required: true })}
-              className="w-full mt-2 px-4 py-3 rounded-lg bg-white/5 border border-[#636363]"
+              className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter your email"
             />
-
           </div>
 
           {/* Password */}
           <div>
-
-            <label className="text-sm text-gray-300">
-              Password
-            </label>
+            <label className="text-sm text-gray-600">Password</label>
 
             <div className="relative mt-2">
-
               <input
                 type={showPassword ? "text" : "password"}
                 {...register("password", { required: true })}
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#636363] pr-12"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 pr-12 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your password"
               />
 
               {/* Toggle Button */}
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
-
             </div>
 
             {/* Forgot Password */}
@@ -118,28 +100,19 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => navigate("/auth/forget-password")}
-                className="text-sm text-[#A4A4A4] hover:text-white transition"
+                className="text-sm text-gray-500 hover:text-gray-800 transition"
               >
                 Forgot password?
               </button>
             </div>
-
           </div>
 
           {/* Submit */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="btn-primary w-full"
-          >
-            {/* Continue */}
-            {/* {loading ? "Processing..." : "Log In"} */} Login
+          <button type="submit" disabled={loading} className="btn-primary w-full">
+            {loading ? "Processing..." : "Login"}
           </button>
-
         </form>
-
       </div>
-
     </div>
   );
 };

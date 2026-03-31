@@ -7,76 +7,50 @@ import logo from "../../assets/Vector.png";
 // import { toast } from "react-toastify";
 
 const ForgetPassword = () => {
-
-  const { register, handleSubmit, formState:{errors} } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   // const navigate = useNavigate();
   // const axiosSecure = useAxiosSecure();
 
-
-  // use mutation if updating data 
-
-  // const forgotMutation = useMutation({
-  //   mutationFn: (data) =>
-  //     axiosSecure.post("/auth/forgot-password/", data),
-
-  //   onSuccess: (res, variables) => {
-
-  //     toast.success("OTP sent to your email");
-  //     console.log(res);
-      
-
-  //     navigate("/auth/otp", {
-  //       state:{ email: variables.email }
-  //     });
-
-  //   },
-
-  //   onError: () => {
-  //     toast.error("Failed to send OTP");
-  //   }
-  // });
-
   const onSubmit = (data) => {
-    // forgotMutation.mutate(data);
     console.log(data);
-    
   };
 
   return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
+      
+      <div className="w-[650px] h-[500px] bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
 
-    <div className="min-h-screen flex items-center justify-center bg-[#1D1D1D] text-white">
-
-      <div className="w-[650px] border border-[#636363] rounded-2xl p-10 bg-white/3">
-
+        {/* Header */}
         <div className="flex flex-col items-center mb-8">
 
-          <div className="flex items-center gap-2 mb-3">
-            <img src={logo} alt="logo" className="w-12 h-12"/>
-            <h1 className="text-3xl font-semibold">LoGo</h1>
+          <div className="flex flex-col items-center gap-2 mb-3">
+            <img src={logo} alt="logo" className="w-12 h-12" />
+            <h1 className="text-3xl font-semibold text-primary">LoGo</h1>
           </div>
 
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-lg font-semibold text-primary">
             Forgot Password?
           </h2>
 
-          <p className="text-sm text-[#A4A4A4] mt-1">
+          <p className="text-sm text-gray-500 mt-1">
             Please enter your email to get verification code
           </p>
 
         </div>
 
+        {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
           <div>
-
-            <label className="text-sm text-gray-300">
+            <label className="text-sm text-gray-600">
               Email
             </label>
 
             <input
               type="email"
-              {...register("email",{required:true})}
-              className="w-full mt-2 px-4 py-3 rounded-lg bg-white/5 border border-[#636363]"
+              {...register("email", { required: true })}
+              placeholder="Enter your email"
+              className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
             />
 
             {errors.email && (
@@ -84,7 +58,6 @@ const ForgetPassword = () => {
                 Email is required
               </p>
             )}
-
           </div>
 
           <button
@@ -99,7 +72,6 @@ const ForgetPassword = () => {
       </div>
 
     </div>
-
   );
 };
 

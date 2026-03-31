@@ -4,7 +4,12 @@ import { Outlet } from 'react-router';
 const Auth = () => {
     return (
         <div>
-            <Outlet></Outlet>
+            <header className='sticky top-0'>
+                    <div className="h-18 bg-white"></div>
+            </header>
+            <main>
+                <Outlet></Outlet>
+            </main>
         </div>
     );
 };
