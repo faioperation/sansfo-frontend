@@ -47,9 +47,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white text-[#969696]">
+    <div className="min-h-screen flex items-center justify-center bg-[#f6f8f9] text-[#2F3337]">
 
-      <div className="w-[650px] border border-[#636363] rounded-2xl p-10">
+      <div className="w-[650px] bg-white border border-gray-200 rounded-2xl p-10 shadow-sm">
 
         {/* Logo */}
         <div className="flex flex-col items-center mb-8">
@@ -63,7 +63,7 @@ const Login = () => {
             Login to Account
           </h2>
 
-          <p className="text-sm text-[#969696] mt-1">
+          <p className="text-sm text-[#64748B] mt-1">
             Start with new journey
           </p>
 
@@ -75,14 +75,15 @@ const Login = () => {
           {/* Email */}
           <div>
 
-            <label className="text-sm text-gray-300">
+            <label className="text-sm text-[#64748B]">
               Email
             </label>
 
             <input
               type="email"
               {...register("email", { required: true })}
-              className="w-full mt-2 px-4 py-3 rounded-lg bg-white/5 border border-[#636363]"
+              placeholder="Enter your email"
+              className="w-full mt-2 px-4 py-3 rounded-lg bg-white border border-gray-300 text-[#2F3337] placeholder-[#A0AAB5] focus:outline-none focus:ring-2 focus:ring-primary"
             />
 
           </div>
@@ -90,7 +91,7 @@ const Login = () => {
           {/* Password */}
           <div>
 
-            <label className="text-sm text-gray-300">
+            <label className="text-sm text-[#64748B]">
               Password
             </label>
 
@@ -99,14 +100,15 @@ const Login = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 {...register("password", { required: true })}
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#636363] pr-12"
+                placeholder="Enter your password"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-[#2F3337] placeholder-[#A0AAB5] pr-12 focus:outline-none focus:ring-2 focus:ring-primary"
               />
 
               {/* Toggle Button */}
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -118,7 +120,7 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => navigate("/auth/forget-password")}
-                className="text-sm text-[#A4A4A4] hover:text-white transition"
+                className="text-sm text-[#64748B] hover:text-[#2F3337] transition"
               >
                 Forgot password?
               </button>
