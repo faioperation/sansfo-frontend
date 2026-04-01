@@ -49,9 +49,10 @@ const Appointment = () => {
   const dayNames = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
 
   return (
-    <div className="min-h-full bg-[#f6f8f9] flex flex-col items-center pt-20 px-4 font-sans relative">
+    <div className="min-h-full bg-[#f6f8f9] flex flex-col items-center justify-center pt-20 px-4 font-sans relative">
 
-      <div className="w-full max-w-lg lg:max-w-3xl">
+      {!showModal && (
+        <div className="w-full max-w-lg lg:max-w-3xl">
 
         {/* HEADER */}
         <div className="mb-10">
@@ -191,8 +192,9 @@ const Appointment = () => {
           </button>
         </div>
       </div>
+      )}
 
-      {/* MODAL */}
+      {/* CONFIRMATION VIEW (MODAL) */}
       <AppointmentModal
         isOpen={showModal}
         onClose={() => setShowModal(false)}

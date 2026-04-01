@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Check, Clock, CalendarDays, CheckCircle2, User } from "lucide-react";
 
 const AppointmentModal = ({ isOpen, onClose, selectedDate, selectedTime }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute inset-0 z-50 flex flex-col items-center pt-24 px-4 bg-[#f6f8f9]/95 backdrop-blur-sm min-h-full">
+    <div className="w-full flex flex-col items-center justify-center animate-[fadeIn_.3s_ease-out]">
       
-      {/* CLOSE BUTTON */}
-      <button 
-        onClick={onClose} 
-        className="absolute top-8 right-8 text-[#A0AAB5] hover:text-[#2F3337] transition-colors rounded-full p-2 hover:bg-black/5 z-50"
-        aria-label="Close"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
+      <div className="w-full max-w-xl text-center flex flex-col items-center relative">
 
-      <div className="w-full max-w-xl text-center flex flex-col items-center animate-[fadeIn_.3s_ease-out]">
+        {/* CLOSE BUTTON */}
+        <button 
+          onClick={onClose} 
+          className="absolute -top-12 -right-2 text-[#A0AAB5] hover:text-[#2F3337] transition-colors rounded-full p-2 hover:bg-black/5 z-50"
+          aria-label="Back"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
 
         {/* TOP ICON: Teal circle, white sub-circle, teal check */}
         <div className="relative mb-6">
@@ -75,11 +75,11 @@ const AppointmentModal = ({ isOpen, onClose, selectedDate, selectedTime }) => {
           {/* PROFESSIONAL BLOCK */}
           <div className="bg-[#F4F6F8] rounded-[24px] p-5 flex items-center justify-between text-left">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#9EB4B6] flex items-end justify-center overflow-hidden flex-shrink-0">
-                 {/* Silhouette placeholder representing the doctor jacket */}
-                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="translate-y-1">
-                   <path fillRule="evenodd" clipRule="evenodd" d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM19.988 22H4.01199C3.1207 22 2.53509 21.082 2.87183 20.2505C4.20078 16.9682 7.76025 14.6 12 14.6C16.2397 14.6 19.7992 16.9682 21.1281 20.2505C21.4649 21.082 20.8793 22 19.988 22Z" fill="#758E91"/>
-                 </svg>
+              <div className="w-[42px] h-[42px] rounded-full bg-[#9AB1B3] relative overflow-hidden flex-shrink-0">
+                 {/* Head */}
+                 <div className="absolute top-[9px] left-1/2 -translate-x-1/2 w-[11px] h-[11px] rounded-full bg-[#758E91]"></div>
+                 {/* Shoulders */}
+                 <div className="absolute -bottom-[8px] left-1/2 -translate-x-1/2 w-[26px] h-[26px] rounded-full bg-[#758E91]"></div>
               </div>
               <div>
                 <p className="text-[10px] font-bold text-[#A0AAB5] tracking-widest uppercase mb-1">Professional</p>
