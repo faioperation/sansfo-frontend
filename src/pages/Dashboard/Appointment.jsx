@@ -151,22 +151,18 @@ const Appointment = () => {
           <div className="grid grid-cols-2 gap-4">
             {slots.map((slot) => {
               const isSelected = selectedTime === slot.time;
-              const isBooked = slot.status === "booked";
               return (
                 <button
                   key={slot.id}
-                  disabled={isBooked}
                   onClick={() => setSelectedTime(slot.time)}
                   className={`rounded-2xl p-4 text-left transition-all ${
-                    isBooked
-                      ? "bg-[#EAD7A4] text-[#A68F51] cursor-not-allowed opacity-90"
-                      : isSelected
+                    isSelected
                       ? "bg-[#4DA7B0] text-white shadow-md"
                       : "bg-white text-[#2F3337] hover:shadow-md border border-transparent hover:border-gray-100 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.03)]"
                   }`}
                 >
-                  <p className={`text-[12px] font-semibold mb-1 ${isSelected ? 'text-white/80' : isBooked ? 'text-[#9A7D37]' : 'text-[#737F90]'}`}>{slot.period}</p>
-                  <p className={`text-[16px] font-bold ${isBooked ? 'text-[#8C702E]' : ''}`}>{slot.time}</p>
+                  <p className={`text-[12px] font-semibold mb-1 ${isSelected ? 'text-white/80' : 'text-[#737F90]'}`}>{slot.period}</p>
+                  <p className={`text-[16px] font-bold`}>{slot.time}</p>
                 </button>
               );
             })}
