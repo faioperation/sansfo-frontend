@@ -36,6 +36,7 @@ const Root = () => {
         <div className="flex-1 overflow-y-auto">
           {/* Nav items */}
           <nav className="flex flex-col gap-1 p-3 pt-12 mt-2">
+            {/* eslint-disable-next-line no-unused-vars */}
             {navLinks.map(({ to, icon: Icon, label }) => (
               <NavLink
                 key={to}
@@ -102,6 +103,7 @@ const Root = () => {
             </button>
           </div>
           <nav className="flex flex-col gap-1 p-3 pt-6">
+            {/* eslint-disable-next-line no-unused-vars */}
             {navLinks.map(({ to, icon: Icon, label }) => (
               <NavLink
                 key={to}

@@ -8,7 +8,7 @@ import logo from "../../assets/Vector.png";
 
 const Otp = () => {
 
-  const { register, setValue } = useForm();
+  const { register } = useForm();
   // const navigate = useNavigate();
   // const location = useLocation();
   // const axiosSecure = useAxiosSecure();
@@ -214,8 +214,6 @@ const Otp = () => {
 
           {[...Array(6)].map((_, index) => {
 
-            const { ref, ...rest } = register(`otp${index + 1}`);
-
             return (
               <input
                 key={index}
@@ -223,7 +221,7 @@ const Otp = () => {
                 inputMode="numeric"
                 pattern="[0-9]*"
                 type="text"
-                {...rest}
+                {...register(`otp${index + 1}`)}
                 // ref={(el) => {
                 //   ref(el);
                 //   inputs.current[index] = el;

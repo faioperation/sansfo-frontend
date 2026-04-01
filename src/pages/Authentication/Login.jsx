@@ -15,7 +15,7 @@ const Login = () => {
   const navigate = useNavigate();
   // const axiosSecure = useAxiosSecure();
   // const { login } = useAuth();
-  const [loading, setLoading] = useState(false)
+  const [loading] = useState(false)
 
   const [showPassword, setShowPassword] = useState(false);
 

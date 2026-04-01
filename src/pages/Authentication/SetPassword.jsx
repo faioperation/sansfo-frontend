@@ -24,7 +24,7 @@ const SetPassword = () => {
     formState: { errors }
   } = useForm();
 
-  // const newPassword = watch("newPassword");
+  const newPassword = watch("newPassword");
 
   const onSubmit = async (data) => {
 

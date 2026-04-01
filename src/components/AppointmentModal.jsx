@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Check, Clock, CalendarDays, CheckCircle2, User } from "lucide-react";
 
 const AppointmentModal = ({ isOpen, onClose, selectedDate, selectedTime }) => {
