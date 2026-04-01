@@ -28,35 +28,35 @@ const SetPassword = () => {
 
   const onSubmit = async (data) => {
 
-     console.log(data);
-    
+    console.log(data);
 
-  //   if (!email) {
-  //     toast.error("Email not found. Please try again.");
-  //     navigate("/auth/forget-password");
-  //     return;
-  //   }
 
-  //   try {
+    //   if (!email) {
+    //     toast.error("Email not found. Please try again.");
+    //     navigate("/auth/forget-password");
+    //     return;
+    //   }
 
-  //     const res = await axiosSecure.post("/auth/reset-password/", {
-  //       email: email,
-  //       new_password: data.newPassword,
-  //       confirm_password: data.confirmPassword
-  //     });
+    //   try {
 
-  //     console.log(res.data);
+    //     const res = await axiosSecure.post("/auth/reset-password/", {
+    //       email: email,
+    //       new_password: data.newPassword,
+    //       confirm_password: data.confirmPassword
+    //     });
 
-  //     toast.success("Password Reset Successful");
+    //     console.log(res.data);
 
-  //     navigate("/auth/password-successfull");
+    //     toast.success("Password Reset Successful");
 
-  //   } catch (error) {
+    //     navigate("/auth/password-successfull");
 
-  //     console.log(error.response?.data);
-  //     toast.error("Failed to reset password");
+    //   } catch (error) {
 
-  //   }
+    //     console.log(error.response?.data);
+    //     toast.error("Failed to reset password");
+
+    //   }
 
   };
 
