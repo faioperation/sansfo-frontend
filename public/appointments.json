@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Julianne Sterling",
+    "initials": "JS",
+    "date": "Oct 24, 2024",
+    "time": "10:30 AM",
+    "status": "Confirmed",
+    "color": "green"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Rivera",
+    "initials": "MR",
+    "date": "Oct 24, 2024",
+    "time": "11:15 AM",
+    "status": "Confirmed",
+    "color": "orange"
+  },
+  {
+    "id": 3,
+    "name": "Elena Loomis",
+    "initials": "EL",
+    "date": "Oct 24, 2024",
+    "time": "01:45 PM",
+    "status": "Pending",
+    "color": "green"
+  },
+  {
+    "id": 4,
+    "name": "David Kim",
+    "initials": "DK",
+    "date": "Oct 25, 2024",
+    "time": "09:00 AM",
+    "status": "Confirmed",
+    "color": "dark"
+  }
+]

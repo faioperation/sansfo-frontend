@@ -1,0 +1,8 @@
+[
+  { "id": 1, "time": "09:30 AM", "period": "Morning", "status": "available" },
+  { "id": 2, "time": "10:45 AM", "period": "Morning", "status": "available" },
+  { "id": 3, "time": "02:15 PM", "period": "Afternoon", "status": "available" },
+  { "id": 4, "time": "04:00 PM", "period": "Afternoon", "status": "booked" },
+  { "id": 5, "time": "06:30 PM", "period": "Evening", "status": "available" },
+  { "id": 6, "time": "07:45 PM", "period": "Evening", "status": "available" }
+]

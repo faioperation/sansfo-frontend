@@ -22,43 +22,58 @@ const Root = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F7F5F3]">
+    <div className="flex h-screen overflow-hidden bg-[#f6f8f9]">
 
       {/* ============ DESKTOP SIDEBAR ============ */}
       <aside
         className={`
-          hidden lg:flex flex-col flex-shrink-0
+          hidden lg:flex flex-col justify-between flex-shrink-0
           bg-[#F7F5F3] border-r border-gray-100
           transition-all duration-300 ease-in-out
-          ${sidebarExpanded ? "w-56" : "w-14"}
+          ${sidebarExpanded ? "w-[240px]" : "w-20"}
         `}
       >
-        {/* Nav items */}
-        <nav className="flex flex-col gap-1 p-2 pt-15 mt-2">
-          {navLinks.map(({ to, icon: Icon, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === "/"}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150
-                ${isActive
-                  ? "bg-[#089BAB]/10 text-[#089BAB]"
-                  : "text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  <Icon size={20} className="flex-shrink-0" strokeWidth={isActive ? 2.2 : 1.8} />
-                  {sidebarExpanded && (
-                    <span className="whitespace-nowrap overflow-hidden">{label}</span>
-                  )}
-                </>
-              )}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="flex-1 overflow-y-auto">
+          {/* Nav items */}
+          <nav className="flex flex-col gap-1 p-3 pt-12 mt-2">
+            {navLinks.map(({ to, icon: Icon, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === "/"}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-3 rounded-xl text-[14px] font-medium transition-all duration-150
+                  ${isActive
+                    ? "text-[#4DA7B0]"
+                    : "text-[#737A86] hover:bg-white hover:text-[#2F3337] hover:shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <Icon size={20} className="flex-shrink-0" strokeWidth={isActive ? 2.2 : 1.8} />
+                    {sidebarExpanded && (
+                      <span className="whitespace-nowrap overflow-hidden">{label}</span>
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        {/* Desktop Profile Section */}
+        <div className={`bg-[#4DA7B0] text-white flex items-center gap-3 transition-all duration-300 ease-in-out ${sidebarExpanded ? "p-4" : "p-3 justify-center"} overflow-hidden`}>
+          <div className="w-10 h-10 rounded-full bg-[#1AA9B8]/40 flex items-center justify-center font-bold flex-shrink-0 border border-white/20">
+            DA
+          </div>
+          {sidebarExpanded && (
+            <div className="min-w-0">
+              <h4 className="text-[14px] font-semibold truncate leading-tight">Dr. Admin</h4>
+              <p className="text-[12px] text-white/80 truncate">admin@medai.com</p>
+            </div>
+          )}
+        </div>
       </aside>
 
       {/* ============ MOBILE OVERLAY SIDEBAR ============ */}
@@ -70,46 +85,58 @@ const Root = () => {
       )}
       <aside
         className={`
-          fixed top-0 left-0 h-full w-56 bg-white z-40 flex flex-col
-          border-r border-gray-100 shadow-xl
+          fixed top-0 left-0 h-full w-[260px] bg-[#f6f8f9] z-40 flex flex-col justify-between
+          border-r border-gray-100 shadow-2xl
           transition-transform duration-300 ease-in-out
           lg:hidden
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <div className="flex items-center justify-end h-14 px-4 border-b border-gray-100">
-          
-          <button
-            onClick={() => setMobileOpen(false)}
-            className="text-gray-400 hover:text-gray-600"
-          >
-            <X size={20} />
-          </button>
-        </div>
-        <nav className="flex flex-col gap-1 p-2 pt-5 mt-2">
-          {navLinks.map(({ to, icon: Icon, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === "/"}
+        <div className="flex-1 overflow-y-auto">
+          <div className="flex items-center justify-end h-14 px-4 border-b border-gray-200 bg-white">
+            <button
               onClick={() => setMobileOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150
-                ${isActive
-                  ? "bg-[#089BAB]/10 text-[#089BAB]"
-                  : "text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                }`
-              }
+              className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              {({ isActive }) => (
-                <>
-                  <Icon size={20} className="flex-shrink-0" strokeWidth={isActive ? 2.2 : 1.8} />
-                  <span>{label}</span>
-                </>
-              )}
-            </NavLink>
-          ))}
-        </nav>
+              <X size={20} />
+            </button>
+          </div>
+          <nav className="flex flex-col gap-1 p-3 pt-6">
+            {navLinks.map(({ to, icon: Icon, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === "/"}
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 px-3 py-3 rounded-xl text-[15px] font-medium transition-all duration-150
+                  ${isActive
+                    ? "text-[#4DA7B0]"
+                    : "text-[#737A86] hover:bg-white hover:text-[#2F3337] hover:shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)]"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <Icon size={22} className="flex-shrink-0" strokeWidth={isActive ? 2.2 : 1.8} />
+                    <span>{label}</span>
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        {/* Mobile Profile Section */}
+        <div className="bg-[#4DA7B0] p-4 text-white flex items-center gap-4">
+          <div className="w-11 h-11 rounded-full bg-[#1AA9B8]/40 flex items-center justify-center font-bold text-[15px] border border-white/20 flex-shrink-0">
+            DA
+          </div>
+          <div className="min-w-0">
+            <h4 className="text-[15px] font-semibold truncate leading-tight">Dr. Admin</h4>
+            <p className="text-[13px] text-white/80 truncate">admin@medai.com</p>
+          </div>
+        </div>
       </aside>
 
       {/* ============ MAIN CONTENT ============ */}
